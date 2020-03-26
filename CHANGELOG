@@ -1,0 +1,29 @@
+
+Thu Mar 26 15:55:49 PDT 2020
+----------------------------
+Added random forrest and XGB boost to blended model
+
+Removed the following from blended model:
+	ARDRegression
+	PassiveAggressiveRegressor
+	LassoLars
+	TheilSenRegressor
+
+Weights:
+	- BayesianRidge: 0.25
+	- LinearRegression: 0.25
+	- Random Forrest: 0.25
+	- XGB Boost: 0.25
+
+Results:
+	Model = BayesianRidge                  RMSE = 0.00934
+	Model = LassoLars                      RMSE = 0.02833
+	Model = TheilSenRegressor              RMSE = 0.01918
+	Model = LinearRegression               RMSE = 0.00938
+	Model = Random Forrest                 RMSE = 0.00998
+	Model = XGB Boost                      RMSE = 0.00938
+
+Sat Mar 22
+----------------------------
+Use log transform on sales price
+
