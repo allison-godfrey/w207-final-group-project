@@ -1,0 +1,62 @@
+Tue 31 Mar 2020 02:37:00 AM PDT
+----------------------------
+- Added AdaBoostRegressor model
+- Changed the base_estimator for XGBoost to BayesianRidge
+- Changed year to categorical 
+- Added features to model
+- Patched LotFrontage with dummy values
+- Modify some of the ordinal values to give the N/A a more neutral value
+
+Weights:
+  AdaBoostRegressor:  0.27
+  XGBoost:            0.25
+  BayesianRidge:      0.2
+  Linear:             0.11
+  TheilSen:           0.15
+  Random_Forest:      0.01
+  ARD:                0.01
+  PassiveAggressive:  0.0
+  LassoLars:          0.0
+
+Results:
+	Model = AdaBoostRegressor              RMSE = 0.009104135
+	Model = XGBoost                        RMSE = 0.009492402
+	Model = BayesianRidge                  RMSE = 0.009169356
+	Model = Linear                         RMSE = 0.009244069
+	Model = TheilSen                       RMSE = 0.009218069
+	Model = Random Forest                  RMSE = 0.010325989
+	Model = ARD                            RMSE = 0.010766327
+	Model = PassiveAggressive              RMSE = 0.013801476
+	Model = LassoLars                      RMSE = 0.029748760
+
+  Blended Model RMSE = 0.00878
+
+
+Thu Mar 26 15:55:49 PDT 2020
+----------------------------
+Added random forrest and XGB boost to blended model
+
+Removed the following from blended model:
+	ARDRegression
+	PassiveAggressiveRegressor
+	LassoLars
+	TheilSenRegressor
+
+Weights:
+	- BayesianRidge: 0.25
+	- LinearRegression: 0.25
+	- Random Forrest: 0.25
+	- XGB Boost: 0.25
+
+Results:
+	Model = BayesianRidge                  RMSE = 0.00934
+	Model = LassoLars                      RMSE = 0.02833
+	Model = TheilSenRegressor              RMSE = 0.01918
+	Model = LinearRegression               RMSE = 0.00938
+	Model = Random Forrest                 RMSE = 0.00998
+	Model = XGB Boost                      RMSE = 0.00938
+
+Sat Mar 22
+----------------------------
+Use log transform on sales price
+
